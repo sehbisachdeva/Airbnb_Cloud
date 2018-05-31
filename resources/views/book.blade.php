@@ -16,8 +16,8 @@
                             </div>
                         @endif
 
-                        Your room has been Book.
-                        <a href="{{ route('rooms') }}">Home Page</a>
+                        Your Booking Conformation has been successful.<br/><br/>
+                        <a class="btn btn-primary" href="{{ route('rooms') }}">Home Page</a>
 
 
                     </div>

@@ -36,14 +36,15 @@ class RoomController extends Controller
     {
 
 
-
-
         $room = DB::table('room_details')->where('room_id', $id)->first();
 
-        $admin = \Auth::user()->is_admin;
+        $user_id = \Auth::user()->id;
+
+        $check_admin = DB::table('admin_users')->where('id', $user_id)->first();
 
 
-        if(false)
+
+        if($check_admin && $check_admin->is_admin)
         {
             return view('admin_view_room', ['room' => $room]);
         }

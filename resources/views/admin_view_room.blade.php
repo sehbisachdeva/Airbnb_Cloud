@@ -20,7 +20,7 @@
                         <form method="post" >
 
                             <fieldset>
-                                <legend>Book Now</legend>
+                                <legend>Update Price and Accommodates Details</legend>
 
                                 <p class="row">
                                     <label for="room_id" class="col-md-4">
@@ -68,7 +68,8 @@
                                     <label class="col-md-4" for="accommodates">
                                         <span>Accommodates: </span>
                                     </label>
-                                    <input class="col-md-4" type="text" id="accommodates" name="accommodates" value="{{$room->accommodates}}">
+                                    <input style="border:3px solid #007bff" class="col-md-4" type="text" id="accommodates" name="accommodates" value="{{$room->accommodates}}">
+                                    Change Accommodates Details
                                 </p>
 
                                 <p>
@@ -82,17 +83,15 @@
                                     <label class="col-md-4" for="price">
                                         <span>Price: </span>
                                     </label>
-                                    <input class="col-md-4" type="text" id="price" name="price" value="${{$room->price}}">
+                                    <input style="border:3px solid #007bff" class="col-md-4" type="text" id="price" name="price" value="{{$room->price}}">
+                                    Change Price Details
                                 </p>
 
 
                             </fieldset>
 
 
-
-
-
-                            {{--<input type="submit" name="submit" value="Book Now">--}}
+                            <input class="btn btn-primary" type="submit" name="submit" value="Update">
                         </form>
 
                     </div>
