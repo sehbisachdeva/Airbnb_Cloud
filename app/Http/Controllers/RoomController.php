@@ -31,6 +31,18 @@ class RoomController extends Controller
         return view('rooms', ['rooms' => $rooms]);
     }
 
+    public function update()
+    {
+        DB::table('room_details')
+            ->where('room_id', $_GET['room_id'])
+            ->update(['price' => $_GET['price'], 'accommodates' => $_GET['accommodates']]);
+
+        $room = DB::table('room_details')->where('room_id', $_GET['room_id'])->first();
+
+
+        return view('admin_view_room', ['room' => $room, 'update' => true]);
+    }
+
 
     public function view($id)
     {
@@ -46,7 +58,7 @@ class RoomController extends Controller
 
         if($check_admin && $check_admin->is_admin)
         {
-            return view('admin_view_room', ['room' => $room]);
+            return view('admin_view_room', ['room' => $room, 'update' => false]);
         }
         else{
             return view('view_room', ['room' => $room]);

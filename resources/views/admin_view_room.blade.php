@@ -17,10 +17,18 @@
                         @endif
 
 
-                        <form method="post" >
+                            @if ($update)
+                                <div class="alert alert-success">
+                                    Saved
+                                </div>
+                            @endif
+
+                            <form method="get" action="{{ route('update_room') }}" enctype="multipart/form-data">
 
                             <fieldset>
                                 <legend>Update Price and Accommodates Details</legend>
+
+                                <input type="hidden" id="room_id" name="room_id" value="{{$room->room_id}}">
 
                                 <p class="row">
                                     <label for="room_id" class="col-md-4">

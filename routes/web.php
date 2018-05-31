@@ -29,4 +29,8 @@ Route::get('/room/{id}', 'RoomController@view')->name('view_room');
 
 Route::get('/book/{id}', 'RoomController@book')->name('book_room');
 
+Route::get('/update', 'RoomController@update')->name('update_room');
+
+//Route::post('/update', ['uses' => 'RoomController@update', 'as' => 'update.form']);
+
 
